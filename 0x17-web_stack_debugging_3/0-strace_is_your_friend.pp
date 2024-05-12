@@ -1,5 +1,5 @@
-# puppet file to automate a 500 error fix
-exec { 'fixed-phpp':
-  command => "sed -i 's/phpp/php/g' /var/www/html/wp-settings.php",
-  path    => '/bin';
+# Makes sure that file exists
+file { '/var/www/html/wp-includes/class-wp-locale.phpp':
+          ensure => present,
+          source => '/var/www/html/wp-includes/class-wp-locale.php',
 }
